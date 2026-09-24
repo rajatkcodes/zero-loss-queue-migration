@@ -1,0 +1,21 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        com.taoensso/carmine {:mvn/version "3.3.2"}
+        org.apache.kafka/kafka-clients {:mvn/version "3.6.1"}
+        http-kit/http-kit {:mvn/version "2.7.0"}
+        metosin/reitit {:mvn/version "0.7.0-alpha1"}
+        cheshire/cheshire {:mvn/version "5.12.0"}
+        org.clojure/tools.logging {:mvn/version "1.2.4"}
+        ch.qos.logback/logback-classic {:mvn/version "1.4.14"}
+        io.opentelemetry/opentelemetry-api {:mvn/version "1.34.1"}
+        io.opentelemetry/opentelemetry-sdk {:mvn/version "1.34.1"}
+        io.opentelemetry/opentelemetry-sdk-trace {:mvn/version "1.34.1"}
+        io.opentelemetry/opentelemetry-context {:mvn/version "1.34.1"}}
+ :aliases
+ {:event-generator   {:main-opts ["-m" "swym.services.event-generator"]}
+  :legacy-consumer   {:main-opts ["-m" "swym.services.legacy-consumer"]}
+  :new-consumer      {:main-opts ["-m" "swym.services.new-consumer"]}
+  :control-plane     {:main-opts ["-m" "swym.services.control-plane"]}
+  :metrics-aggregator{:main-opts ["-m" "swym.services.metrics-aggregator"]}
+  :dlq-replay        {:main-opts ["-m" "swym.services.dlq-replay"]}
+  :chaos-runner      {:main-opts ["-m" "swym.services.chaos-runner"]}}}
